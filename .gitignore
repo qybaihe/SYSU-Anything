@@ -1,0 +1,8 @@
+# Public repo policy: publish only the skill layer, install scripts, and top-level README.
+*
+!.gitignore
+!README.md
+!install/
+!install/**
+!skills/
+!skills/**

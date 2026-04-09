@@ -1,0 +1,4 @@
+interface:
+  display_name: "SYSU anything CLI"
+  short_description: "Operate SYSU services through the local CLI"
+  default_prompt: "Use $sysu-anything-cli to operate SYSU campus services, libic, and Qiguan rides through the local sysu-anything CLI."

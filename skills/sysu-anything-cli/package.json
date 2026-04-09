@@ -1,0 +1,32 @@
+{
+  "name": "sysu-anything-cli-skill",
+  "version": "0.2.0",
+  "description": "SYSU-Anything.skill CLI pack for agent-native campus workflows across SYSU.",
+  "type": "module",
+  "bin": {
+    "sysu-anything-cli-skill": "bin/deploy.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qybaihe/SYSU-Anything.git"
+  },
+  "homepage": "https://github.com/qybaihe/SYSU-Anything",
+  "files": [
+    "bin/",
+    "README.md",
+    "SKILL.md",
+    "agents/",
+    "references/"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "keywords": [
+    "codex-skill",
+    "sysu",
+    "cli",
+    "agent",
+    "campus"
+  ]
+}

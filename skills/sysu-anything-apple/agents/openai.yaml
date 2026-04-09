@@ -1,0 +1,4 @@
+interface:
+  display_name: "SYSU Anything Apple"
+  short_description: "Sync SYSU flows into Apple apps on macOS"
+  default_prompt: "Use $sysu-anything-apple to run SYSU Anything macOS workflows with Apple Calendar or Apple Reminders, including libic and career sync."
