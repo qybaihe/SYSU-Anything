@@ -11,9 +11,9 @@ data/bus-schedule.json
 ## 基本命令
 
 ```bash
-node dist/cli.js bus --help
-node dist/cli.js bus --bus 1
-node dist/cli.js bus --bus 0
+sysu-anything bus --help
+sysu-anything bus --bus 1
+sysu-anything bus --bus 0
 ```
 
 ## 规则
@@ -29,12 +29,12 @@ node dist/cli.js bus --bus 0
 ## 常用筛选
 
 ```bash
-node dist/cli.js bus --from 东校园 --to 南校园
-node dist/cli.js bus --query 教职工
-node dist/cli.js bus --query 黄埔大道
-node dist/cli.js bus --upcoming
-node dist/cli.js bus --notes
-node dist/cli.js bus --json
+sysu-anything bus --from 东校园 --to 南校园
+sysu-anything bus --query 教职工
+sysu-anything bus --query 黄埔大道
+sysu-anything bus --upcoming
+sysu-anything bus --notes
+sysu-anything bus --json
 ```
 
 参数含义：
@@ -55,9 +55,9 @@ node dist/cli.js bus --json
 ## 典型例子
 
 ```bash
-node dist/cli.js bus --bus 1 --from 东校园 --to 南校园
-node dist/cli.js bus --bus 0 --upcoming
-node dist/cli.js bus --bus 1 --query 学生 --json
+sysu-anything bus --bus 1 --from 东校园 --to 南校园
+sysu-anything bus --bus 0 --upcoming
+sysu-anything bus --bus 1 --query 学生 --json
 ```
 
 ## 维护方式

@@ -12,32 +12,32 @@ JWXT 相关能力包括：
 ## 快速入口
 
 ```bash
-node dist/cli.js today
-node dist/cli.js jwxt status
-node dist/cli.js jwxt timetable --help
-node dist/cli.js jwxt leave apply --help
+sysu-anything today
+sysu-anything jwxt status
+sysu-anything jwxt timetable --help
+sysu-anything jwxt leave apply --help
 ```
 
 ## 读操作
 
 ```bash
-node dist/cli.js today
-node dist/cli.js jwxt status
-node dist/cli.js jwxt section-times
-node dist/cli.js jwxt timetable
-node dist/cli.js jwxt timetable --weekly 4
-node dist/cli.js jwxt timetable --scan-from 1 --scan-to 25
-node dist/cli.js jwxt leave reasons
-node dist/cli.js jwxt leave summary
-node dist/cli.js jwxt leave list
-node dist/cli.js jwxt leave audit --id "<askLeaveId>"
+sysu-anything today
+sysu-anything jwxt status
+sysu-anything jwxt section-times
+sysu-anything jwxt timetable
+sysu-anything jwxt timetable --weekly 4
+sysu-anything jwxt timetable --scan-from 1 --scan-to 25
+sysu-anything jwxt leave reasons
+sysu-anything jwxt leave summary
+sysu-anything jwxt leave list
+sysu-anything jwxt leave audit --id "<askLeaveId>"
 ```
 
 ## 写操作
 
 ```bash
-node dist/cli.js jwxt leave apply --reason 病假 --start-date 2026-04-09 --start-part 上午 --end-date 2026-04-09 --end-part 下午 --explanation "发烧去校医院"
-node dist/cli.js jwxt leave apply --reason 病假 --start-date 2026-04-09 --start-part 上午 --end-date 2026-04-09 --end-part 下午 --explanation "发烧去校医院" --confirm
+sysu-anything jwxt leave apply --reason 病假 --start-date 2026-04-09 --start-part 上午 --end-date 2026-04-09 --end-part 下午 --explanation "发烧去校医院"
+sysu-anything jwxt leave apply --reason 病假 --start-date 2026-04-09 --start-part 上午 --end-date 2026-04-09 --end-part 下午 --explanation "发烧去校医院" --confirm
 ```
 
 ## 重要行为

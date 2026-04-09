@@ -3,7 +3,7 @@
 Use the separate macOS entrypoint when the user explicitly wants Apple Calendar or Apple Reminders:
 
 ```bash
-node dist/apple-cli.js ...
+sysu-anything-apple ...
 ```
 
 Equivalent installed binary:
@@ -17,13 +17,13 @@ sysu-anything-apple ...
 Run:
 
 ```bash
-node dist/apple-cli.js apple doctor
+sysu-anything-apple apple doctor
 ```
 
 Optional write test:
 
 ```bash
-node dist/apple-cli.js apple doctor --write-test
+sysu-anything-apple apple doctor --write-test
 ```
 
 Only continue with Apple-sync workflows after `doctor` shows the required permissions are granted.
@@ -32,17 +32,17 @@ Only continue with Apple-sync workflows after `doctor` shows the required permis
 
 - `apple doctor`: no SYSU login needed
 - `qg link --calendar --reminders`: no SYSU login needed
-- `ykt homework list --reminders`: needs Rain Classroom web login; check with `node dist/cli.js ykt status`
-- `ykt homework detail --reminders`: needs Rain Classroom web login; check with `node dist/cli.js ykt status`
-- `today --calendar`: needs JWXT login; check with `node dist/cli.js jwxt status`
+- `ykt homework list --reminders`: needs Rain Classroom web login; check with `sysu-anything ykt status`
+- `ykt homework detail --reminders`: needs Rain Classroom web login; check with `sysu-anything ykt status`
+- `today --calendar`: needs JWXT login; check with `sysu-anything jwxt status`
 - `career teachin detail --calendar --reminders`: no SYSU login needed
 - `career jobfair detail --calendar --reminders`: no SYSU login needed
-- `career teachin signup --confirm --calendar --reminders`: needs a live CAS session if the command still has to seed `career-session.json`; usually prime with `node dist/cli.js auth workwechat`
-- `career jobfair signup --confirm --calendar --reminders`: needs a live CAS session if the command still has to seed `career-session.json`; usually prime with `node dist/cli.js auth workwechat`
-- `gym book --confirm --calendar --reminders`: needs gym login; check with `node dist/cli.js gym profile`
-- `explore seminar reserve --confirm --calendar --reminders`: needs explore login; check with `node dist/cli.js explore whoami`
-- `jwxt leave apply --confirm --calendar-block --reminders`: needs JWXT login; check with `node dist/cli.js jwxt status`
-- `xgxt workstudy apply --confirm --calendar`: needs xgxt auth; check with `node dist/cli.js xgxt current-user`
+- `career teachin signup --confirm --calendar --reminders`: needs a live CAS session if the command still has to seed `career-session.json`; usually prime with `sysu-anything auth workwechat`
+- `career jobfair signup --confirm --calendar --reminders`: needs a live CAS session if the command still has to seed `career-session.json`; usually prime with `sysu-anything auth workwechat`
+- `gym book --confirm --calendar --reminders`: needs gym login; check with `sysu-anything gym profile`
+- `explore seminar reserve --confirm --calendar --reminders`: needs explore login; check with `sysu-anything explore whoami`
+- `jwxt leave apply --confirm --calendar-block --reminders`: needs JWXT login; check with `sysu-anything jwxt status`
+- `xgxt workstudy apply --confirm --calendar`: needs xgxt auth; check with `sysu-anything xgxt current-user`
 
 The Apple entrypoint still reuses the same state directory:
 
@@ -55,8 +55,8 @@ The Apple entrypoint still reuses the same state directory:
 ### Qiguan trip to calendar and reminders
 
 ```bash
-node dist/apple-cli.js qg link 1 --calendar --reminders
-node dist/apple-cli.js qg link --start zhuhai --to south --station zhuhai --time 16:00 --calendar --reminders
+sysu-anything-apple qg link 1 --calendar --reminders
+sysu-anything-apple qg link --start zhuhai --to south --station zhuhai --time 16:00 --calendar --reminders
 ```
 
 Notes:
@@ -68,15 +68,15 @@ Notes:
 ### Today to calendar
 
 ```bash
-node dist/apple-cli.js today --calendar
-node dist/apple-cli.js today --calendar --calendar-name SYSU --alert-minutes 10
+sysu-anything-apple today --calendar
+sysu-anything-apple today --calendar --calendar-name SYSU --alert-minutes 10
 ```
 
 ### Career teachin to calendar and reminders
 
 ```bash
-node dist/apple-cli.js career teachin detail --id 174791 --calendar --reminders
-node dist/apple-cli.js career teachin signup --id 174791 --confirm --calendar --reminders
+sysu-anything-apple career teachin detail --id 174791 --calendar --reminders
+sysu-anything-apple career teachin signup --id 174791 --confirm --calendar --reminders
 ```
 
 Notes:
@@ -89,8 +89,8 @@ Notes:
 ### Career jobfair to calendar and reminders
 
 ```bash
-node dist/apple-cli.js career jobfair detail --id 49326 --calendar --reminders
-node dist/apple-cli.js career jobfair signup --id 49326 --confirm --calendar --reminders
+sysu-anything-apple career jobfair detail --id 49326 --calendar --reminders
+sysu-anything-apple career jobfair signup --id 49326 --confirm --calendar --reminders
 ```
 
 Notes:
@@ -103,8 +103,8 @@ Notes:
 ### Rain Classroom homework DDL to reminders
 
 ```bash
-node dist/apple-cli.js ykt homework list --classroom-id 29791794 --reminders
-node dist/apple-cli.js ykt homework detail --classroom-id 29791794 --leaf-id 80444748 --reminders
+sysu-anything-apple ykt homework list --classroom-id 29791794 --reminders
+sysu-anything-apple ykt homework detail --classroom-id 29791794 --leaf-id 80444748 --reminders
 ```
 
 Notes:
@@ -116,9 +116,9 @@ Notes:
 ### JWXT timetable to calendar
 
 ```bash
-node dist/apple-cli.js jwxt timetable --calendar
-node dist/apple-cli.js jwxt timetable --weekly 5 --calendar
-node dist/apple-cli.js jwxt timetable --calendar --calendar-scope term
+sysu-anything-apple jwxt timetable --calendar
+sysu-anything-apple jwxt timetable --weekly 5 --calendar
+sysu-anything-apple jwxt timetable --calendar --calendar-scope term
 ```
 
 Notes:
@@ -130,7 +130,7 @@ Notes:
 ### Gym booking to calendar and reminders
 
 ```bash
-node dist/apple-cli.js gym book --venue-type "珠海校区健身房" --date 2026-04-09 --start 09:00 --end 10:00 --confirm --calendar --reminders
+sysu-anything-apple gym book --venue-type "珠海校区健身房" --date 2026-04-09 --start 09:00 --end 10:00 --confirm --calendar --reminders
 ```
 
 Notes:
@@ -141,7 +141,7 @@ Notes:
 ### Explore seminar reservation to calendar and reminders
 
 ```bash
-node dist/apple-cli.js explore seminar reserve --id fd08b0fed61d120c5d12bb45add1e929 --confirm --calendar --reminders
+sysu-anything-apple explore seminar reserve --id fd08b0fed61d120c5d12bb45add1e929 --confirm --calendar --reminders
 ```
 
 Notes:
@@ -153,7 +153,7 @@ Notes:
 ### JWXT leave to calendar block and reminders
 
 ```bash
-node dist/apple-cli.js jwxt leave apply --reason 病假 --start-date 2026-04-09 --start-part 上午 --end-date 2026-04-09 --end-part 下午 --explanation "发烧去校医院" --attachment ./proof.png --confirm --calendar-block --reminders
+sysu-anything-apple jwxt leave apply --reason 病假 --start-date 2026-04-09 --start-part 上午 --end-date 2026-04-09 --end-part 下午 --explanation "发烧去校医院" --attachment ./proof.png --confirm --calendar-block --reminders
 ```
 
 Notes:
@@ -164,8 +164,8 @@ Notes:
 ### XGXT work-study slot sync to calendar
 
 ```bash
-node dist/apple-cli.js xgxt workstudy apply --id 2b3c720f-6b1a-4800-a6be-3650a506ac39 --year 2026 --slots-json '[{"gwgzsjId":"2d299aaa-ef8a-47ca-b2b9-648f963dea47","xsgzkssj":"08:00","xsgzjssj":"12:00","xsgzxq":4}]' --confirm --calendar
-node dist/apple-cli.js xgxt workstudy apply --id 2b3c720f-6b1a-4800-a6be-3650a506ac39 --year 2026 --slots-json '[{"gwgzsjId":"2d299aaa-ef8a-47ca-b2b9-648f963dea47","xsgzkssj":"08:00","xsgzjssj":"12:00","xsgzxq":4}]' --confirm --calendar --calendar-start-date 2026-04-13 --calendar-weeks 8
+sysu-anything-apple xgxt workstudy apply --id 2b3c720f-6b1a-4800-a6be-3650a506ac39 --year 2026 --slots-json '[{"gwgzsjId":"2d299aaa-ef8a-47ca-b2b9-648f963dea47","xsgzkssj":"08:00","xsgzjssj":"12:00","xsgzxq":4}]' --confirm --calendar
+sysu-anything-apple xgxt workstudy apply --id 2b3c720f-6b1a-4800-a6be-3650a506ac39 --year 2026 --slots-json '[{"gwgzsjId":"2d299aaa-ef8a-47ca-b2b9-648f963dea47","xsgzkssj":"08:00","xsgzjssj":"12:00","xsgzxq":4}]' --confirm --calendar --calendar-start-date 2026-04-13 --calendar-weeks 8
 ```
 
 Notes:

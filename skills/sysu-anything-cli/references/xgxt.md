@@ -10,7 +10,7 @@
 
 - 现有 `session.json` 可以让 `qgzx-mobile` 静态页面直接打开
 - 但这还不等于 API 已登录
-- `node dist/cli.js xgxt current-user` 现在会优先复用已有 `xgxt-auth.json`
+- `sysu-anything xgxt current-user` 现在会优先复用已有 `xgxt-auth.json`
 - 如果本地只有 CAS 会话，没有 xgxt token，CLI 会自动走“CAS 票据 -> /sso/login -> accessToken”补齐 `xgxt-auth.json`
 - 如果本地 `xgxt-auth.json` 已过期，但 `session.json` 还有效，CLI 会自动回 CAS 刷新并重试
 - `tryLoginUserInfo` 对当前站点不是稳定前置；实际可用的是根站 `POST /sso/login?realm=sysuRealm&ticket=...&service=https://xgxt.sysu.edu.cn/`
@@ -18,10 +18,10 @@
 ## 恢复路径
 
 ```bash
-node dist/cli.js xgxt probe --wechat-ua
-node dist/cli.js xgxt auth-url
-node dist/cli.js xgxt replay-callback --url "<最终回跳URL>"
-node dist/cli.js xgxt current-user
+sysu-anything xgxt probe --wechat-ua
+sysu-anything xgxt auth-url
+sysu-anything xgxt replay-callback --url "<最终回跳URL>"
+sysu-anything xgxt current-user
 ```
 
 说明：
@@ -42,29 +42,29 @@ node dist/cli.js xgxt current-user
 ## 已封装命令
 
 ```bash
-node dist/cli.js xgxt probe
-node dist/cli.js xgxt auth-url
-node dist/cli.js xgxt replay-callback --help
-node dist/cli.js xgxt current-user
-node dist/cli.js xgxt workstudy filters
-node dist/cli.js xgxt workstudy list
-node dist/cli.js xgxt workstudy detail --id "<qgzxgwId>"
-node dist/cli.js xgxt workstudy resume
-node dist/cli.js xgxt workstudy records
-node dist/cli.js xgxt workstudy judge --id "<qgzxgwId>" --year "<qgzxnd>"
-node dist/cli.js xgxt workstudy apply --help
-node dist/cli.js xgxt holiday filters
-node dist/cli.js xgxt holiday list
-node dist/cli.js xgxt holiday detail --id "<cjlfxgzId>"
-node dist/cli.js xgxt holiday apply --help
+sysu-anything xgxt probe
+sysu-anything xgxt auth-url
+sysu-anything xgxt replay-callback --help
+sysu-anything xgxt current-user
+sysu-anything xgxt workstudy filters
+sysu-anything xgxt workstudy list
+sysu-anything xgxt workstudy detail --id "<qgzxgwId>"
+sysu-anything xgxt workstudy resume
+sysu-anything xgxt workstudy records
+sysu-anything xgxt workstudy judge --id "<qgzxgwId>" --year "<qgzxnd>"
+sysu-anything xgxt workstudy apply --help
+sysu-anything xgxt holiday filters
+sysu-anything xgxt holiday list
+sysu-anything xgxt holiday detail --id "<cjlfxgzId>"
+sysu-anything xgxt holiday apply --help
 ```
 
 ## 岗位列表
 
 ```bash
-node dist/cli.js xgxt workstudy filters
-node dist/cli.js xgxt workstudy list --year "<qgzxnd>"
-node dist/cli.js xgxt workstudy detail --id "<qgzxgwId>"
+sysu-anything xgxt workstudy filters
+sysu-anything xgxt workstudy list --year "<qgzxnd>"
+sysu-anything xgxt workstudy detail --id "<qgzxgwId>"
 ```
 
 可传的筛选：
@@ -89,9 +89,9 @@ node dist/cli.js xgxt workstudy detail --id "<qgzxgwId>"
 CLI 对应：
 
 ```bash
-node dist/cli.js xgxt workstudy judge --id "<qgzxgwId>" --year "<qgzxnd>"
-node dist/cli.js xgxt workstudy apply --id "<qgzxgwId>" --year "<qgzxnd>" --slots-json '[{"gwgzsjId":"123","xsgzkssj":"08:00","xsgzjssj":"11:30","xsgzxq":1}]'
-node dist/cli.js xgxt workstudy apply --id "<qgzxgwId>" --year "<qgzxnd>" --slots-json '[{"gwgzsjId":"123","xsgzkssj":"08:00","xsgzjssj":"11:30","xsgzxq":1}]' --confirm
+sysu-anything xgxt workstudy judge --id "<qgzxgwId>" --year "<qgzxnd>"
+sysu-anything xgxt workstudy apply --id "<qgzxgwId>" --year "<qgzxnd>" --slots-json '[{"gwgzsjId":"123","xsgzkssj":"08:00","xsgzjssj":"11:30","xsgzxq":1}]'
+sysu-anything xgxt workstudy apply --id "<qgzxgwId>" --year "<qgzxnd>" --slots-json '[{"gwgzsjId":"123","xsgzkssj":"08:00","xsgzjssj":"11:30","xsgzxq":1}]' --confirm
 ```
 
 注意：
@@ -123,12 +123,12 @@ node dist/cli.js xgxt workstudy apply --id "<qgzxgwId>" --year "<qgzxnd>" --slot
 已封装命令：
 
 ```bash
-node dist/cli.js xgxt holiday filters
-node dist/cli.js xgxt holiday list --school-year 2025-2026
-node dist/cli.js xgxt holiday detail --id "<cjlfxgzId>"
-node dist/cli.js xgxt holiday cities --province 广东省
-node dist/cli.js xgxt holiday districts --province 广东省 --city 广州市
-node dist/cli.js xgxt holiday apply --id "<cjlfxgzId>"
+sysu-anything xgxt holiday filters
+sysu-anything xgxt holiday list --school-year 2025-2026
+sysu-anything xgxt holiday detail --id "<cjlfxgzId>"
+sysu-anything xgxt holiday cities --province 广东省
+sysu-anything xgxt holiday districts --province 广东省 --city 广州市
+sysu-anything xgxt holiday apply --id "<cjlfxgzId>"
 ```
 
 说明：
@@ -146,13 +146,13 @@ node dist/cli.js xgxt holiday apply --id "<cjlfxgzId>"
 常用示例：
 
 ```bash
-node dist/cli.js xgxt holiday filters
-node dist/cli.js xgxt holiday list
-node dist/cli.js xgxt holiday detail --id "<cjlfxgzId>"
-node dist/cli.js xgxt holiday apply --id "<cjlfxgzId>"
-node dist/cli.js xgxt holiday apply --id "<cjlfxgzId>" --mode 留校 --current-campus 珠海校区 --stay-reason 科研 --holiday-campus 珠海校区 --holiday-address "珠海校区-荔园18号-6层-618-618-04"
-node dist/cli.js xgxt holiday apply --id "<cjlfxgzId>" --mode 离校 --current-campus 珠海校区 --leave-date 2026-04-04 --return-date 2026-04-06 --destination-type 回家 --transport 火车 --country 中国 --province 广东省 --city 广州市 --district 天河区 --street 体育东路
-node dist/cli.js xgxt holiday apply --id "<cjlfxgzId>" --mode 离校 --current-campus 珠海校区 --leave-date 2026-04-04 --return-date 2026-04-06 --destination-type 回家 --transport 火车 --country 中国 --province 广东省 --city 广州市 --district 天河区 --street 体育东路 --confirm
+sysu-anything xgxt holiday filters
+sysu-anything xgxt holiday list
+sysu-anything xgxt holiday detail --id "<cjlfxgzId>"
+sysu-anything xgxt holiday apply --id "<cjlfxgzId>"
+sysu-anything xgxt holiday apply --id "<cjlfxgzId>" --mode 留校 --current-campus 珠海校区 --stay-reason 科研 --holiday-campus 珠海校区 --holiday-address "珠海校区-荔园18号-6层-618-618-04"
+sysu-anything xgxt holiday apply --id "<cjlfxgzId>" --mode 离校 --current-campus 珠海校区 --leave-date 2026-04-04 --return-date 2026-04-06 --destination-type 回家 --transport 火车 --country 中国 --province 广东省 --city 广州市 --district 天河区 --street 体育东路
+sysu-anything xgxt holiday apply --id "<cjlfxgzId>" --mode 离校 --current-campus 珠海校区 --leave-date 2026-04-04 --return-date 2026-04-06 --destination-type 回家 --transport 火车 --country 中国 --province 广东省 --city 广州市 --district 天河区 --street 体育东路 --confirm
 ```
 
 注意：

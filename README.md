@@ -90,6 +90,29 @@ curl -fsSL https://raw.githubusercontent.com/qybaihe/SYSU-Anything/main/install/
 
 部署完成后，把 `SYSU-Anything.skill/` 目录作为你的 AI IDE 本地 skill / prompt bundle 即可使用。
 
+### 3. OpenClaw / ClawHub 版本
+
+适合直接在 OpenClaw 生态里安装、分发、更新这两个 skill。
+
+ClawHub 安装：
+
+```bash
+clawhub install sysu-anything-cli
+clawhub install sysu-anything-apple
+```
+
+OpenClaw 会根据 skill metadata 提示安装底层编译版 runtime：
+
+```bash
+npm i -g sysu-anything
+```
+
+这样用户拿到的是：
+
+- ClawHub 上公开的 skill layer
+- npm 上公开的编译版 CLI/runtime
+- 不会把源码仓库直接暴露给安装端
+
 ## npm 包
 
 - [sysu-anything-cli-skill](https://www.npmjs.com/package/sysu-anything-cli-skill)

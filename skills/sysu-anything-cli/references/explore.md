@@ -8,8 +8,8 @@
 ## 会话恢复
 
 ```bash
-node dist/cli.js explore refresh
-node dist/cli.js explore whoami
+sysu-anything explore refresh
+sysu-anything explore whoami
 ```
 
 如果状态不对，先 `refresh` 再继续。
@@ -17,21 +17,21 @@ node dist/cli.js explore whoami
 ## 组会
 
 ```bash
-node dist/cli.js explore seminar list
-node dist/cli.js explore seminar calendar --month 2026-04
-node dist/cli.js explore seminar detail --id "<seminarId>"
-node dist/cli.js explore seminar reserve --id "<seminarId>"
-node dist/cli.js explore seminar reserve --id "<seminarId>" --confirm
+sysu-anything explore seminar list
+sysu-anything explore seminar calendar --month 2026-04
+sysu-anything explore seminar detail --id "<seminarId>"
+sysu-anything explore seminar reserve --id "<seminarId>"
+sysu-anything explore seminar reserve --id "<seminarId>" --confirm
 ```
 
 ## 课题
 
 ```bash
-node dist/cli.js explore research list
-node dist/cli.js explore research filters
-node dist/cli.js explore research detail --id "<researchId>"
-node dist/cli.js explore research apply --id "<researchId>" --message "您好，我对这个课题很感兴趣。"
-node dist/cli.js explore research apply --id "<researchId>" --message "您好，我对这个课题很感兴趣。" --confirm
+sysu-anything explore research list
+sysu-anything explore research filters
+sysu-anything explore research detail --id "<researchId>"
+sysu-anything explore research apply --id "<researchId>" --message "您好，我对这个课题很感兴趣。"
+sysu-anything explore research apply --id "<researchId>" --message "您好，我对这个课题很感兴趣。" --confirm
 ```
 
 ## 重要行为

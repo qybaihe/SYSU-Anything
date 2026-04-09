@@ -4,10 +4,10 @@
 
 ## 明确属于写操作的命令
 
-- `node dist/cli.js jwxt leave apply`
-- `node dist/cli.js gym book`
-- `node dist/cli.js explore seminar reserve`
-- `node dist/cli.js explore research apply`
+- `sysu-anything jwxt leave apply`
+- `sysu-anything gym book`
+- `sysu-anything explore seminar reserve`
+- `sysu-anything explore research apply`
 
 ## 默认策略
 

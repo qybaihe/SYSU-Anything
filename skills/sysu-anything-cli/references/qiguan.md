@@ -13,17 +13,17 @@
 ## 快速入口
 
 ```bash
-node dist/cli.js qg --help
-node dist/cli.js qg list --today --available
-node dist/cli.js qg routes
+sysu-anything qg --help
+sysu-anything qg list --today --available
+sysu-anything qg routes
 ```
 
 ## 常见查询
 
 ```bash
-node dist/cli.js qg list --start zhuhai --to south --today --available
-node dist/cli.js qg list --start zhuhai --to east --station boya --tomorrow --available
-node dist/cli.js qg list --start south --to zhuhai --date 2026-04-10 --available
+sysu-anything qg list --start zhuhai --to south --today --available
+sysu-anything qg list --start zhuhai --to east --station boya --tomorrow --available
+sysu-anything qg list --start south --to zhuhai --date 2026-04-10 --available
 ```
 
 ## 生成下单链接
@@ -31,15 +31,15 @@ node dist/cli.js qg list --start south --to zhuhai --date 2026-04-10 --available
 优先先跑列表，再用列表里的 `Code`：
 
 ```bash
-node dist/cli.js qg list --start zhuhai --to south --today --available
-node dist/cli.js qg link 1
-node dist/cli.js qg link 1 --copy
+sysu-anything qg list --start zhuhai --to south --today --available
+sysu-anything qg link 1
+sysu-anything qg link 1 --copy
 ```
 
 没有缓存列表时，也可以按路线和时间直接生成：
 
 ```bash
-node dist/cli.js qg link --start zhuhai --to south --station zhuhai --time 16:00
+sysu-anything qg link --start zhuhai --to south --station zhuhai --time 16:00
 ```
 
 ## 路线键

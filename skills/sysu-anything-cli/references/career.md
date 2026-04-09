@@ -3,7 +3,7 @@
 `career` 对应：
 
 ```bash
-node dist/cli.js career ...
+sysu-anything career ...
 ```
 
 站点基于：
@@ -59,7 +59,7 @@ node dist/cli.js career ...
 - 目前没有单独的 `career status` 命令；写操作前如果怀疑登录态过期，先跑：
 
 ```bash
-node dist/cli.js auth workwechat
+sysu-anything auth workwechat
 ```
 
 ## 当前已知阻塞项
@@ -76,17 +76,17 @@ node dist/cli.js auth workwechat
 ## 常用命令
 
 ```bash
-node dist/cli.js career teachin list --limit 10
-node dist/cli.js career teachin detail --id 174791
-node dist/cli.js career teachin signup --id 174791
+sysu-anything career teachin list --limit 10
+sysu-anything career teachin detail --id 174791
+sysu-anything career teachin signup --id 174791
 
-node dist/cli.js career jobfair list --limit 10
-node dist/cli.js career jobfair detail --id 49326
-node dist/cli.js career jobfair signup --id 49326
+sysu-anything career jobfair list --limit 10
+sysu-anything career jobfair detail --id 49326
+sysu-anything career jobfair signup --id 49326
 
-node dist/cli.js career job list --limit 10
-node dist/cli.js career job detail --id 2370124
-node dist/cli.js career job apply --id 2370124
+sysu-anything career job list --limit 10
+sysu-anything career job detail --id 2370124
+sysu-anything career job apply --id 2370124
 ```
 
 ## Apple 侧
@@ -94,8 +94,8 @@ node dist/cli.js career job apply --id 2370124
 如果用户明确要把宣讲会或招聘会导入 Apple Calendar / Reminders，切到：
 
 ```bash
-node dist/apple-cli.js career teachin detail --id 174791 --calendar --reminders
-node dist/apple-cli.js career jobfair detail --id 49326 --calendar --reminders
+sysu-anything-apple career teachin detail --id 174791 --calendar --reminders
+sysu-anything-apple career jobfair detail --id 49326 --calendar --reminders
 ```
 
 Apple 版本还支持在 `signup --confirm` 成功后顺手同步本地日历和提醒事项，详见 `references/apple.md` 或 Apple skill 里的 `references/career.md`。

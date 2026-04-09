@@ -5,27 +5,27 @@
 ## 登录链路
 
 ```bash
-node dist/cli.js gym probe
-node dist/cli.js gym auth-url
-node dist/cli.js gym replay-callback --url "<callback-url>"
-node dist/cli.js gym token refresh
+sysu-anything gym probe
+sysu-anything gym auth-url
+sysu-anything gym replay-callback --url "<callback-url>"
+sysu-anything gym token refresh
 ```
 
 ## 读操作
 
 ```bash
-node dist/cli.js gym profile
-node dist/cli.js gym campuses
-node dist/cli.js gym venue-types --campus 南校园 --sport 羽毛球
-node dist/cli.js gym available --venue-type "珠海校区健身房"
-node dist/cli.js gym bookings --venue-type "珠海校区健身房" --mine
+sysu-anything gym profile
+sysu-anything gym campuses
+sysu-anything gym venue-types --campus 南校园 --sport 羽毛球
+sysu-anything gym available --venue-type "珠海校区健身房"
+sysu-anything gym bookings --venue-type "珠海校区健身房" --mine
 ```
 
 ## 写操作
 
 ```bash
-node dist/cli.js gym book --venue-type "珠海校区健身房" --date 2026-04-09 --start 09:00 --end 10:00
-node dist/cli.js gym book --venue-type "珠海校区健身房" --date 2026-04-09 --start 09:00 --end 10:00 --confirm
+sysu-anything gym book --venue-type "珠海校区健身房" --date 2026-04-09 --start 09:00 --end 10:00
+sysu-anything gym book --venue-type "珠海校区健身房" --date 2026-04-09 --start 09:00 --end 10:00 --confirm
 ```
 
 ## 重要行为

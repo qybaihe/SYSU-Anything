@@ -3,13 +3,13 @@
 Apple 入口：
 
 ```bash
-node dist/apple-cli.js career ...
+sysu-anything-apple career ...
 ```
 
 先做一次 macOS 预检查：
 
 ```bash
-node dist/apple-cli.js apple doctor
+sysu-anything-apple apple doctor
 ```
 
 ## 当前支持的 career Apple 闭环
@@ -31,8 +31,8 @@ node dist/apple-cli.js apple doctor
 直接用 `detail` / `view`：
 
 ```bash
-node dist/apple-cli.js career teachin detail --id 174791 --calendar --reminders
-node dist/apple-cli.js career jobfair detail --id 49326 --calendar --reminders
+sysu-anything-apple career teachin detail --id 174791 --calendar --reminders
+sysu-anything-apple career jobfair detail --id 49326 --calendar --reminders
 ```
 
 特点：
@@ -46,8 +46,8 @@ node dist/apple-cli.js career jobfair detail --id 49326 --calendar --reminders
 用 `signup --confirm`：
 
 ```bash
-node dist/apple-cli.js career teachin signup --id 174791 --confirm --calendar --reminders
-node dist/apple-cli.js career jobfair signup --id 49326 --confirm --calendar --reminders
+sysu-anything-apple career teachin signup --id 174791 --confirm --calendar --reminders
+sysu-anything-apple career jobfair signup --id 49326 --confirm --calendar --reminders
 ```
 
 特点：
@@ -76,7 +76,7 @@ node dist/apple-cli.js career jobfair signup --id 49326 --confirm --calendar --r
 - `signup --confirm`：如果还没播种 `career-session.json`，先执行：
 
 ```bash
-node dist/cli.js auth workwechat
+sysu-anything auth workwechat
 ```
 
 然后再重试 Apple 命令。

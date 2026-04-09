@@ -1,17 +1,17 @@
 # SYSU anything Apple overview
 
-Use this skill only for macOS workflows that need Apple Calendar or Apple Reminders.
+Use this skill only for macOS workflows that need Apple Calendar or Apple Reminders. Prefer the installed `sysu-anything-apple` binary from the published `sysu-anything` npm package.
 
 Primary entrypoint:
 
 ```bash
-node dist/apple-cli.js
+sysu-anything-apple
 ```
 
 ## Mandatory preflight
 
 ```bash
-node dist/apple-cli.js apple doctor
+sysu-anything-apple apple doctor
 ```
 
 If `doctor` fails, do not continue with Apple sync commands.
@@ -21,53 +21,53 @@ If `doctor` fails, do not continue with Apple sync commands.
 - `qg link --calendar --reminders`
   - no SYSU login required
 - `ykt homework list --reminders`
-  - `node dist/cli.js ykt status`
+  - `sysu-anything ykt status`
 - `ykt homework detail --reminders`
-  - `node dist/cli.js ykt status`
+  - `sysu-anything ykt status`
 - `today --calendar`
-  - `node dist/cli.js jwxt status`
+  - `sysu-anything jwxt status`
 - `jwxt timetable --calendar`
-  - `node dist/cli.js jwxt status`
+  - `sysu-anything jwxt status`
 - `career teachin detail --calendar --reminders`
   - no SYSU login required
 - `career jobfair detail --calendar --reminders`
   - no SYSU login required
 - `career teachin signup --confirm --calendar --reminders`
-  - `node dist/cli.js auth workwechat` when `career-session.json` still needs to be seeded
+  - `sysu-anything auth workwechat` when `career-session.json` still needs to be seeded
 - `career jobfair signup --confirm --calendar --reminders`
-  - `node dist/cli.js auth workwechat` when `career-session.json` still needs to be seeded
+  - `sysu-anything auth workwechat` when `career-session.json` still needs to be seeded
 - `gym book --confirm --calendar --reminders`
-  - `node dist/cli.js gym profile`
+  - `sysu-anything gym profile`
 - `libic reserve --confirm --calendar --reminders`
-  - `node dist/cli.js libic whoami`
+  - `sysu-anything libic whoami`
 - `explore seminar reserve --confirm --calendar --reminders`
-  - `node dist/cli.js explore whoami`
+  - `sysu-anything explore whoami`
 - `jwxt leave apply --confirm --calendar-block --reminders`
-  - `node dist/cli.js jwxt status`
+  - `sysu-anything jwxt status`
 - `xgxt workstudy apply --confirm --calendar`
-  - `node dist/cli.js xgxt current-user`
+  - `sysu-anything xgxt current-user`
 
 ## Command patterns
 
 ### Today
 
 ```bash
-node dist/apple-cli.js today --calendar
+sysu-anything-apple today --calendar
 ```
 
 ### Timetable
 
 ```bash
-node dist/apple-cli.js jwxt timetable --calendar
-node dist/apple-cli.js jwxt timetable --calendar --calendar-scope term
-node dist/apple-cli.js jwxt timetable --calendar --calendar-scope term --week1-date 2026-02-23 --term-weeks 18
+sysu-anything-apple jwxt timetable --calendar
+sysu-anything-apple jwxt timetable --calendar --calendar-scope term
+sysu-anything-apple jwxt timetable --calendar --calendar-scope term --week1-date 2026-02-23 --term-weeks 18
 ```
 
 ### Qiguan
 
 ```bash
-node dist/apple-cli.js qg link 1 --calendar --reminders
-node dist/apple-cli.js qg link --start zhuhai --to south --station zhuhai --time 16:00 --calendar --reminders
+sysu-anything-apple qg link 1 --calendar --reminders
+sysu-anything-apple qg link --start zhuhai --to south --station zhuhai --time 16:00 --calendar --reminders
 ```
 
 Semantics:
@@ -78,8 +78,8 @@ Semantics:
 ### Career teachin
 
 ```bash
-node dist/apple-cli.js career teachin detail --id 174791 --calendar --reminders
-node dist/apple-cli.js career teachin signup --id 174791 --confirm --calendar --reminders
+sysu-anything-apple career teachin detail --id 174791 --calendar --reminders
+sysu-anything-apple career teachin signup --id 174791 --confirm --calendar --reminders
 ```
 
 This creates:
@@ -97,8 +97,8 @@ Notes:
 ### Career jobfair
 
 ```bash
-node dist/apple-cli.js career jobfair detail --id 49326 --calendar --reminders
-node dist/apple-cli.js career jobfair signup --id 49326 --confirm --calendar --reminders
+sysu-anything-apple career jobfair detail --id 49326 --calendar --reminders
+sysu-anything-apple career jobfair signup --id 49326 --confirm --calendar --reminders
 ```
 
 This creates:
@@ -116,8 +116,8 @@ Notes:
 ### Rain Classroom homework reminders
 
 ```bash
-node dist/apple-cli.js ykt homework list --classroom-id 29791794 --reminders
-node dist/apple-cli.js ykt homework detail --classroom-id 29791794 --leaf-id 80444748 --reminders
+sysu-anything-apple ykt homework list --classroom-id 29791794 --reminders
+sysu-anything-apple ykt homework detail --classroom-id 29791794 --leaf-id 80444748 --reminders
 ```
 
 This creates:
@@ -134,13 +134,13 @@ Notes:
 ### Gym
 
 ```bash
-node dist/apple-cli.js gym book --venue-type "珠海校区健身房" --date 2026-04-09 --start 09:00 --end 10:00 --confirm --calendar --reminders
+sysu-anything-apple gym book --venue-type "珠海校区健身房" --date 2026-04-09 --start 09:00 --end 10:00 --confirm --calendar --reminders
 ```
 
 ### Libic seminar room
 
 ```bash
-node dist/apple-cli.js libic reserve --kind 15 --room 401 --date 2026-04-10 --start 10:00 --end 11:00 --confirm --calendar --reminders
+sysu-anything-apple libic reserve --kind 15 --room 401 --date 2026-04-10 --start 10:00 --end 11:00 --confirm --calendar --reminders
 ```
 
 This creates:
@@ -158,7 +158,7 @@ Notes:
 ### Explore seminar
 
 ```bash
-node dist/apple-cli.js explore seminar reserve --id <seminarId> --confirm --calendar --reminders
+sysu-anything-apple explore seminar reserve --id <seminarId> --confirm --calendar --reminders
 ```
 
 This creates:
@@ -170,14 +170,14 @@ This creates:
 ### JWXT leave
 
 ```bash
-node dist/apple-cli.js jwxt leave apply --reason 病假 --start-date 2026-04-09 --start-part 上午 --end-date 2026-04-09 --end-part 下午 --explanation "发烧去校医院" --attachment ./proof.png --confirm --calendar-block --reminders
+sysu-anything-apple jwxt leave apply --reason 病假 --start-date 2026-04-09 --start-part 上午 --end-date 2026-04-09 --end-part 下午 --explanation "发烧去校医院" --attachment ./proof.png --confirm --calendar-block --reminders
 ```
 
 ### XGXT work-study
 
 ```bash
-node dist/apple-cli.js xgxt workstudy apply --id 2b3c720f-6b1a-4800-a6be-3650a506ac39 --year 2026 --slots-json '[{"gwgzsjId":"2d299aaa-ef8a-47ca-b2b9-648f963dea47","xsgzkssj":"08:00","xsgzjssj":"12:00","xsgzxq":4}]' --confirm --calendar
-node dist/apple-cli.js xgxt workstudy apply --id 2b3c720f-6b1a-4800-a6be-3650a506ac39 --year 2026 --slots-json '[{"gwgzsjId":"2d299aaa-ef8a-47ca-b2b9-648f963dea47","xsgzkssj":"08:00","xsgzjssj":"12:00","xsgzxq":4}]' --confirm --calendar --calendar-start-date 2026-04-13 --calendar-weeks 8
+sysu-anything-apple xgxt workstudy apply --id 2b3c720f-6b1a-4800-a6be-3650a506ac39 --year 2026 --slots-json '[{"gwgzsjId":"2d299aaa-ef8a-47ca-b2b9-648f963dea47","xsgzkssj":"08:00","xsgzjssj":"12:00","xsgzxq":4}]' --confirm --calendar
+sysu-anything-apple xgxt workstudy apply --id 2b3c720f-6b1a-4800-a6be-3650a506ac39 --year 2026 --slots-json '[{"gwgzsjId":"2d299aaa-ef8a-47ca-b2b9-648f963dea47","xsgzkssj":"08:00","xsgzjssj":"12:00","xsgzxq":4}]' --confirm --calendar --calendar-start-date 2026-04-13 --calendar-weeks 8
 ```
 
 This creates:

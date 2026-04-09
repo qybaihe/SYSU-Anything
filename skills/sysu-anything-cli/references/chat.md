@@ -5,9 +5,9 @@
 ## 登录与探测
 
 ```bash
-node dist/cli.js chat probe
-node dist/cli.js chat auth-url
-node dist/cli.js chat replay-callback --url "<callback-url>"
+sysu-anything chat probe
+sysu-anything chat auth-url
+sysu-anything chat replay-callback --url "<callback-url>"
 ```
 
 常用判断：
@@ -22,18 +22,18 @@ node dist/cli.js chat replay-callback --url "<callback-url>"
 ## 查询类命令
 
 ```bash
-node dist/cli.js chat agent
-node dist/cli.js chat sources
-node dist/cli.js chat chats
-node dist/cli.js chat messages --chat-id "<chatId>"
+sysu-anything chat agent
+sysu-anything chat sources
+sysu-anything chat chats
+sysu-anything chat messages --chat-id "<chatId>"
 ```
 
 ## 发消息
 
 ```bash
-node dist/cli.js chat send --message "你好"
-node dist/cli.js chat send --message "帮我看看最近校内新闻" --scope "校园资讯"
-node dist/cli.js chat send --chat-id "<chatId>" --message "继续"
+sysu-anything chat send --message "你好"
+sysu-anything chat send --message "帮我看看最近校内新闻" --scope "校园资讯"
+sysu-anything chat send --chat-id "<chatId>" --message "继续"
 ```
 
 ## 范围参数
@@ -49,7 +49,7 @@ node dist/cli.js chat send --chat-id "<chatId>" --message "继续"
 建议先跑：
 
 ```bash
-node dist/cli.js chat sources
+sysu-anything chat sources
 ```
 
 再决定具体范围。

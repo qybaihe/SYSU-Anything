@@ -1,18 +1,18 @@
 # SYSU anything CLI 概览
 
-这个 skill 对应当前仓库里的本地 CLI：
+这个 skill 对应 `sysu-anything` 的编译版 CLI，优先使用已经安装好的二进制：
 
 ```bash
-node dist/cli.js
+sysu-anything
 ```
 
 如果用户明确要 Apple Calendar / Reminders 集成，则切到单独的 macOS 入口：
 
 ```bash
-node dist/apple-cli.js
+sysu-anything-apple
 ```
 
-如果 `dist/` 还没更新，先执行：
+如果用户正在维护本地源码仓库，而且命令行为与 npm 版本不一致，再回到仓库里重建：
 
 ```bash
 npm run build
@@ -21,9 +21,9 @@ npm run build
 推荐始终先走逐级发现：
 
 ```bash
-node dist/cli.js --help
-node dist/cli.js <command> --help
-node dist/cli.js <command> <subcommand> --help
+sysu-anything --help
+sysu-anything <command> --help
+sysu-anything <command> <subcommand> --help
 ```
 
 启动时的默认原则：
@@ -76,22 +76,22 @@ node dist/cli.js <command> <subcommand> --help
 ## 常见调用入口
 
 ```bash
-node dist/cli.js bus --help
-node dist/cli.js qg --help
-node dist/cli.js today --help
-node dist/cli.js jwxt timetable --help
-node dist/cli.js chat send --help
-node dist/cli.js gym book --help
-node dist/cli.js libic reserve --help
-node dist/cli.js career teachin list --help
-node dist/cli.js career jobfair detail --help
-node dist/cli.js career job apply --help
-node dist/cli.js explore research apply --help
-node dist/cli.js xgxt workstudy list --help
-node dist/cli.js xgxt holiday list --help
-node dist/apple-cli.js apple doctor
-node dist/apple-cli.js career teachin detail --id 174791 --calendar --reminders
-node dist/apple-cli.js career jobfair detail --id 49326 --calendar --reminders
+sysu-anything bus --help
+sysu-anything qg --help
+sysu-anything today --help
+sysu-anything jwxt timetable --help
+sysu-anything chat send --help
+sysu-anything gym book --help
+sysu-anything libic reserve --help
+sysu-anything career teachin list --help
+sysu-anything career jobfair detail --help
+sysu-anything career job apply --help
+sysu-anything explore research apply --help
+sysu-anything xgxt workstudy list --help
+sysu-anything xgxt holiday list --help
+sysu-anything-apple apple doctor
+sysu-anything-apple career teachin detail --id 174791 --calendar --reminders
+sysu-anything-apple career jobfair detail --id 49326 --calendar --reminders
 ```
 
 ## 选择策略
@@ -106,7 +106,7 @@ node dist/apple-cli.js career jobfair detail --id 49326 --calendar --reminders
 - 需要就业系统宣讲会、招聘会、岗位或简历投递：用 `career`
 - 需要组会预约或课题报名：用 `explore`
 - 需要勤工助学岗位、简历、报名，或长假离返校登记：用 `xgxt`
-- 需要 Apple 日历 / 提醒事项闭环：先读 `references/apple.md`，再用 `node dist/apple-cli.js`
+- 需要 Apple 日历 / 提醒事项闭环：先读 `references/apple.md`，再用 `sysu-anything-apple`
 - 需要雨课堂二维码登录、课程/签到/作业详情或提交：读 `references/ykt.md`
 
 ## 启动检查速查
@@ -116,24 +116,24 @@ node dist/apple-cli.js career jobfair detail --id 49326 --calendar --reminders
 - `qg`
   - 无需登录检查
 - `ykt`
-  - 先跑 `node dist/cli.js ykt status`
+  - 先跑 `sysu-anything ykt status`
 - `today` / `jwxt`
-  - 先跑 `node dist/cli.js jwxt status`
+  - 先跑 `sysu-anything jwxt status`
 - `chat`
-  - 先跑 `node dist/cli.js chat sources`
+  - 先跑 `sysu-anything chat sources`
 - `gym`
-  - 先跑 `node dist/cli.js gym profile`
+  - 先跑 `sysu-anything gym profile`
 - `libic`
-  - 先跑 `node dist/cli.js libic whoami`
+  - 先跑 `sysu-anything libic whoami`
 - `explore`
-  - 先跑 `node dist/cli.js explore whoami`
+  - 先跑 `sysu-anything explore whoami`
 - `career`
   - `list` / `detail`：无需登录检查
-  - `teachin/jobfair signup`、`job apply`：无单独 `status`；如果怀疑登录态过期，先跑 `node dist/cli.js auth workwechat`，后续写命令会自动播种 `career-session.json`
+  - `teachin/jobfair signup`、`job apply`：无单独 `status`；如果怀疑登录态过期，先跑 `sysu-anything auth workwechat`，后续写命令会自动播种 `career-session.json`
 - `xgxt`
-  - 先跑 `node dist/cli.js xgxt current-user`
+  - 先跑 `sysu-anything xgxt current-user`
 - `apple`
-  - 先跑 `node dist/apple-cli.js apple doctor`
+  - 先跑 `sysu-anything-apple apple doctor`
   - 再按目标功能补对应的 `jwxt status`、`gym profile`、`explore whoami`、`auth workwechat` 或 career 写命令预检查
 
 ## Agent 实用建议

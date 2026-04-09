@@ -3,13 +3,13 @@
 Apple 入口：
 
 ```bash
-node dist/apple-cli.js libic reserve ...
+sysu-anything-apple libic reserve ...
 ```
 
 先做一次 macOS 预检查：
 
 ```bash
-node dist/apple-cli.js apple doctor
+sysu-anything-apple apple doctor
 ```
 
 ## 登录要求
@@ -17,26 +17,26 @@ node dist/apple-cli.js apple doctor
 - `libic reserve --confirm --calendar --reminders` 之前，先检查：
 
 ```bash
-node dist/cli.js libic whoami
+sysu-anything libic whoami
 ```
 
 - 如果失败，恢复路径：
 
 ```bash
-node dist/cli.js libic refresh
-node dist/cli.js libic whoami
+sysu-anything libic refresh
+sysu-anything libic whoami
 ```
 
 ## 当前支持的闭环
 
 ```bash
-node dist/apple-cli.js libic reserve --kind 15 --room 401 --date 2026-04-10 --start 10:00 --end 11:00 --confirm --calendar --reminders
+sysu-anything-apple libic reserve --kind 15 --room 401 --date 2026-04-10 --start 10:00 --end 11:00 --confirm --calendar --reminders
 ```
 
 也支持带额外参数：
 
 ```bash
-node dist/apple-cli.js libic reserve --kind 2 --lab 1 --room 309 --date 2026-04-10 --start 14:00 --end 16:00 --title "课程讨论" --memo "软件工程课程讨论" --confirm --calendar --reminders
+sysu-anything-apple libic reserve --kind 2 --lab 1 --room 309 --date 2026-04-10 --start 14:00 --end 16:00 --title "课程讨论" --memo "软件工程课程讨论" --confirm --calendar --reminders
 ```
 
 ## Apple 写入内容

@@ -1,40 +1,59 @@
 ---
 name: sysu-anything-cli
-description: Use when the user wants to operate SYSU campus services through the local sysu-anything CLI in this workspace, including offline Guangzhou shuttle lookup, Qiguan rides between Zhuhai and Guangzhou, Rain Classroom web login/check-in/homework submit flows, JWXT timetable and leave flows, campus chat, gym booking, libic seminar-room reservation, career teachin/jobfair/job workflows, explore seminar/research flows, xgxt work-study and holiday leave/return-school flows, and CAS-based login/session recovery.
+description: Use when the user wants to operate SYSU campus services through the SYSU Anything CLI, including offline Guangzhou shuttle lookup, Qiguan rides between Zhuhai and Guangzhou, Rain Classroom web login/check-in/homework submit flows, JWXT timetable and leave flows, campus chat, gym booking, libic seminar-room reservation, career teachin/jobfair/job workflows, explore seminar/research flows, xgxt work-study and holiday leave/return-school flows, and CAS-based login/session recovery.
+metadata:
+  {
+    "openclaw":
+      {
+        "emoji": "🎓",
+        "requires": { "bins": ["sysu-anything"] },
+        "install":
+          [
+            {
+              "id": "node",
+              "kind": "node",
+              "package": "sysu-anything",
+              "bins": ["sysu-anything", "sysu-anything-apple"],
+              "label": "Install SYSU Anything CLI (npm)",
+            },
+          ],
+      },
+  }
 ---
 
 # SYSU anything CLI
 
-Use the local `sysu-anything` project in this workspace instead of re-deriving APIs when the user wants to use campus-service capabilities that are already wrapped by the CLI.
+Use the published `sysu-anything` CLI instead of re-deriving campus APIs. Prefer the installed binary. If `sysu-anything` is missing, install the compiled package with `npm i -g sysu-anything` or use one-off calls via `npx -y sysu-anything@latest ...`. If the user is actively developing the local repo, the checked-out workspace build is also acceptable.
 
 If the user explicitly wants Apple Calendar / Apple Reminders integration on macOS, switch to the separate Apple entrypoint described in `references/apple.md`.
 
 ## First step
 
-1. Work from the repo root.
+1. Confirm the runtime path:
+   - preferred: `sysu-anything`
+   - one-off fallback: `npx -y sysu-anything@latest`
+   - local-dev fallback inside the repo: `npm run build`
 2. Prefer targeted help before composing a command:
-   - `node dist/cli.js --help`
-   - `node dist/cli.js <command> --help`
-   - `node dist/cli.js <command> <subcommand> --help`
-3. If `dist/` is missing or stale, run:
-   - `npm run build`
-4. Before any login-dependent feature, read `references/auth-and-state.md` and identify what session or token is required.
-5. Check login state before the real action:
+   - `sysu-anything --help`
+   - `sysu-anything <command> --help`
+   - `sysu-anything <command> <subcommand> --help`
+3. Before any login-dependent feature, read `references/auth-and-state.md` and identify what session or token is required.
+4. Check login state before the real action:
    - `bus`: no login check needed
-   - `qg`: no login check needed; prefer `node dist/cli.js qg --help` or `node dist/cli.js qg list --today --available`
-   - `ykt`: `node dist/cli.js ykt status`
-   - `today` / `jwxt`: `node dist/cli.js jwxt status`
-   - `chat`: `node dist/cli.js chat sources`
-   - `gym`: `node dist/cli.js gym profile`
-   - `libic`: `node dist/cli.js libic whoami`
-   - `explore`: `node dist/cli.js explore whoami`
+   - `qg`: no login check needed; prefer `sysu-anything qg --help` or `sysu-anything qg list --today --available`
+   - `ykt`: `sysu-anything ykt status`
+   - `today` / `jwxt`: `sysu-anything jwxt status`
+   - `chat`: `sysu-anything chat sources`
+   - `gym`: `sysu-anything gym profile`
+   - `libic`: `sysu-anything libic whoami`
+   - `explore`: `sysu-anything explore whoami`
    - `career` list/detail: no login check needed
-   - `career` teachin/jobfair signup or `career job apply`: no dedicated status endpoint; if the career write path may be stale, run `node dist/cli.js auth workwechat` first so the command can seed `career-session.json`
-   - `xgxt`: `node dist/cli.js xgxt current-user`
-6. If the check fails, restore login first, then rerun the check, and only after that run the user’s actual command.
-7. If the user wants Apple Calendar / Reminders integration, read `references/apple.md` and run `node dist/apple-cli.js apple doctor` before the real sync command.
-8. For `chat send`, prefer the campus-news scope first:
-   - run `node dist/cli.js chat sources`
+   - `career` teachin/jobfair signup or `career job apply`: no dedicated status endpoint; if the career write path may be stale, run `sysu-anything auth workwechat` first so the command can seed `career-session.json`
+   - `xgxt`: `sysu-anything xgxt current-user`
+5. If the check fails, restore login first, then rerun the check, and only after that run the user’s actual command.
+6. If the user wants Apple Calendar / Reminders integration, read `references/apple.md` and run `sysu-anything-apple apple doctor` before the real sync command.
+7. For `chat send`, prefer the campus-news scope first:
+   - run `sysu-anything chat sources`
    - if the list contains `校园资讯` or `校内资讯`, prefer that exact returned title by default
    - only switch to another scope when the user explicitly asks for it or the source list shows a better match
 

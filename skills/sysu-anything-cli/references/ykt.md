@@ -3,27 +3,27 @@
 这个参考页对应本仓库里已经封装好的 YKT CLI：
 
 ```bash
-node dist/cli.js ykt
+sysu-anything ykt
 ```
 
 如果用户明确要把作业 DDL 导入 Apple Reminders，则切到：
 
 ```bash
-node dist/apple-cli.js ykt homework list --reminders
-node dist/apple-cli.js ykt homework detail --reminders
+sysu-anything-apple ykt homework list --reminders
+sysu-anything-apple ykt homework detail --reminders
 ```
 
 ## 先做什么
 
 1. 先看帮助：
-   - `node dist/cli.js ykt --help`
-   - `node dist/cli.js ykt homework --help`
-   - `node dist/apple-cli.js ykt homework list --help`
+   - `sysu-anything ykt --help`
+   - `sysu-anything ykt homework --help`
+   - `sysu-anything-apple ykt homework list --help`
 2. 先检查雨课堂登录态：
-   - `node dist/cli.js ykt status`
+   - `sysu-anything ykt status`
 3. 如果未登录，恢复登录：
-   - `node dist/cli.js ykt login`
-   - 再重新跑一次 `node dist/cli.js ykt status`
+   - `sysu-anything ykt login`
+   - 再重新跑一次 `sysu-anything ykt status`
 
 ## 关键状态文件
 
@@ -37,15 +37,15 @@ YKT 这条链路不复用 SYSU CAS，会单独维护自己的网页会话。
 ## 常用命令
 
 ```bash
-node dist/cli.js ykt qr
-node dist/cli.js ykt login
-node dist/cli.js ykt status
-node dist/cli.js ykt courses
-node dist/cli.js ykt classroom --classroom-id 29791794
-node dist/cli.js ykt checkin list --classroom-id 29791794
-node dist/cli.js ykt homework list --classroom-id 29791794
-node dist/cli.js ykt homework detail --classroom-id 29791794 --leaf-id 80444748
-node dist/cli.js ykt homework submit --classroom-id 29791794 --leaf-id 80444748 --answers-file ./answers.json
+sysu-anything ykt qr
+sysu-anything ykt login
+sysu-anything ykt status
+sysu-anything ykt courses
+sysu-anything ykt classroom --classroom-id 29791794
+sysu-anything ykt checkin list --classroom-id 29791794
+sysu-anything ykt homework list --classroom-id 29791794
+sysu-anything ykt homework detail --classroom-id 29791794 --leaf-id 80444748
+sysu-anything ykt homework submit --classroom-id 29791794 --leaf-id 80444748 --answers-file ./answers.json
 ```
 
 ## 已封装能力
@@ -86,8 +86,8 @@ node dist/cli.js ykt homework submit --classroom-id 29791794 --leaf-id 80444748 
 ## Apple Reminders 导入
 
 ```bash
-node dist/apple-cli.js ykt homework list --classroom-id 29791794 --reminders
-node dist/apple-cli.js ykt homework detail --classroom-id 29791794 --leaf-id 80444748 --reminders
+sysu-anything-apple ykt homework list --classroom-id 29791794 --reminders
+sysu-anything-apple ykt homework detail --classroom-id 29791794 --leaf-id 80444748 --reminders
 ```
 
 规则：

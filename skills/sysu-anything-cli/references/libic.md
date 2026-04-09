@@ -3,7 +3,7 @@
 `libic` 对应：
 
 ```bash
-node dist/cli.js libic ...
+sysu-anything libic ...
 ```
 
 目标站点：
@@ -34,25 +34,25 @@ node dist/cli.js libic ...
 - 推荐检查命令：
 
 ```bash
-node dist/cli.js libic whoami
+sysu-anything libic whoami
 ```
 
 - 如果失败，恢复路径是：
 
 ```bash
-node dist/cli.js libic refresh
-node dist/cli.js libic whoami
+sysu-anything libic refresh
+sysu-anything libic whoami
 ```
 
 ## 常用命令
 
 ```bash
-node dist/cli.js libic refresh
-node dist/cli.js libic room-types
-node dist/cli.js libic labs --kind 15
-node dist/cli.js libic available --kind 15 --date 2026-04-10
-node dist/cli.js libic reserve --kind 15 --room 401 --date 2026-04-10 --start 10:00 --end 11:00
-node dist/cli.js libic reserve --kind 15 --room 401 --date 2026-04-10 --start 10:00 --end 11:00 --members 24330001,24330002 --confirm
+sysu-anything libic refresh
+sysu-anything libic room-types
+sysu-anything libic labs --kind 15
+sysu-anything libic available --kind 15 --date 2026-04-10
+sysu-anything libic reserve --kind 15 --room 401 --date 2026-04-10 --start 10:00 --end 11:00
+sysu-anything libic reserve --kind 15 --room 401 --date 2026-04-10 --start 10:00 --end 11:00 --members 24330001,24330002 --confirm
 ```
 
 ## 已知注意点
@@ -69,7 +69,7 @@ node dist/cli.js libic reserve --kind 15 --room 401 --date 2026-04-10 --start 10
 如果用户明确要把已成功预约的研讨室同步到 Apple Calendar / Reminders，切到：
 
 ```bash
-node dist/apple-cli.js libic reserve --kind 15 --room 401 --date 2026-04-10 --start 10:00 --end 11:00 --confirm --calendar --reminders
+sysu-anything-apple libic reserve --kind 15 --room 401 --date 2026-04-10 --start 10:00 --end 11:00 --confirm --calendar --reminders
 ```
 
 Apple 版只有在 `--confirm` 后预约成功时才会写入本地 Calendar / Reminders。

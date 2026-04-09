@@ -62,36 +62,36 @@
 - `today` / `jwxt`
   - 需要登录：CAS
   - 本地依赖：`session.json`
-  - 启动检查：`node dist/cli.js jwxt status`
+  - 启动检查：`sysu-anything jwxt status`
 - `ykt`
   - 需要登录：雨课堂网页会话
   - 本地依赖：`ykt-session.json`
-  - 启动检查：`node dist/cli.js ykt status`
+  - 启动检查：`sysu-anything ykt status`
 - `chat`
   - 需要登录：CAS + chat callback token
   - 本地依赖：`session.json`、`chat-session.json`、`chat-auth.json`
-  - 启动检查：`node dist/cli.js chat sources`
+  - 启动检查：`sysu-anything chat sources`
 - `gym`
   - 需要登录：CAS + gym callback 会话 + gym token
   - 本地依赖：`session.json`、`gym-session.json`、`gym-auth.json`
-  - 启动检查：`node dist/cli.js gym profile`
+  - 启动检查：`sysu-anything gym profile`
 - `libic`
   - 需要登录：CAS + libic 站点会话 + libic token
   - 本地依赖：`session.json`、`libic-session.json`
-  - 启动检查：`node dist/cli.js libic whoami`
+  - 启动检查：`sysu-anything libic whoami`
 - `explore`
   - 需要登录：CAS + explore 站点会话
   - 本地依赖：`session.json`、`explore-session.json`
-  - 启动检查：`node dist/cli.js explore whoami`
+  - 启动检查：`sysu-anything explore whoami`
 - `career`
   - `teachin/jobfair/job` 的 `list/detail`：不需要登录
   - `teachin/jobfair signup`、`job apply`：需要 CAS 会话去播种 career 自己的登录状态
   - 本地依赖：`session.json`、`career-session.json`
-  - 启动检查：无单独 `status`，先确保 `node dist/cli.js auth workwechat` 成功，再执行目标写命令
+  - 启动检查：无单独 `status`，先确保 `sysu-anything auth workwechat` 成功，再执行目标写命令
 - `xgxt`
   - 需要登录：xgxt 站点会话 + xgxt current-user/token
   - 本地依赖：`session.json`、`xgxt-session.json`、`xgxt-auth.json`
-  - 启动检查：`node dist/cli.js xgxt current-user`
+  - 启动检查：`sysu-anything xgxt current-user`
 
 ## 哪些能力依赖登录
 
@@ -127,7 +127,7 @@
 ### 1. CAS 基础登录
 
 ```bash
-node dist/cli.js auth workwechat
+sysu-anything auth workwechat
 ```
 
 适用：
@@ -141,72 +141,72 @@ node dist/cli.js auth workwechat
 ### 2. Chat 登录恢复
 
 ```bash
-node dist/cli.js chat sources
-node dist/cli.js chat probe
-node dist/cli.js chat auth-url
-node dist/cli.js chat replay-callback --url "<callback-url>"
-node dist/cli.js chat sources
+sysu-anything chat sources
+sysu-anything chat probe
+sysu-anything chat auth-url
+sysu-anything chat replay-callback --url "<callback-url>"
+sysu-anything chat sources
 ```
 
 ### 3. YKT 登录恢复
 
 ```bash
-node dist/cli.js ykt status
-node dist/cli.js ykt login
-node dist/cli.js ykt status
+sysu-anything ykt status
+sysu-anything ykt login
+sysu-anything ykt status
 ```
 
 ### 4. Gym 登录恢复
 
 ```bash
-node dist/cli.js gym profile
-node dist/cli.js gym probe
-node dist/cli.js gym auth-url
-node dist/cli.js gym replay-callback --url "<callback-url>"
-node dist/cli.js gym token refresh
-node dist/cli.js gym profile
+sysu-anything gym profile
+sysu-anything gym probe
+sysu-anything gym auth-url
+sysu-anything gym replay-callback --url "<callback-url>"
+sysu-anything gym token refresh
+sysu-anything gym profile
 ```
 
 ### 5. Explore 会话恢复
 
 ```bash
-node dist/cli.js explore whoami
-node dist/cli.js explore refresh
-node dist/cli.js explore whoami
+sysu-anything explore whoami
+sysu-anything explore refresh
+sysu-anything explore whoami
 ```
 
 ### 6. Libic 会话恢复
 
 ```bash
-node dist/cli.js libic whoami
-node dist/cli.js libic refresh
-node dist/cli.js libic whoami
+sysu-anything libic whoami
+sysu-anything libic refresh
+sysu-anything libic whoami
 ```
 
 ### 7. JWXT 登录恢复
 
 ```bash
-node dist/cli.js jwxt status
-node dist/cli.js auth workwechat
-node dist/cli.js jwxt status
+sysu-anything jwxt status
+sysu-anything auth workwechat
+sysu-anything jwxt status
 ```
 
 ### 8. XGXT 登录恢复
 
 ```bash
-node dist/cli.js xgxt probe --wechat-ua
-node dist/cli.js xgxt auth-url
-node dist/cli.js xgxt replay-callback --url "<最终回跳URL>"
-node dist/cli.js xgxt current-user
+sysu-anything xgxt probe --wechat-ua
+sysu-anything xgxt auth-url
+sysu-anything xgxt replay-callback --url "<最终回跳URL>"
+sysu-anything xgxt current-user
 ```
 
 ### 9. Career 写操作准备
 
 ```bash
-node dist/cli.js auth workwechat
-node dist/cli.js career teachin signup --id <id>
-node dist/cli.js career jobfair signup --id <id>
-node dist/cli.js career job apply --id <id>
+sysu-anything auth workwechat
+sysu-anything career teachin signup --id <id>
+sysu-anything career jobfair signup --id <id>
+sysu-anything career job apply --id <id>
 ```
 
 说明：
