@@ -35,9 +35,9 @@
 这个项目当前公开分发的是两个 skill：
 
 - `sysu-anything-cli-skill`
-  负责校园主操作层，覆盖班车、岐关、JWXT、YKT、chat、gym、libic、explore、career、xgxt 等系统
+  负责标准版校园主操作层，跨平台可用，覆盖班车、岐关、JWXT、YKT、chat、gym、libic、explore、career、xgxt 等系统
 - `sysu-anything-apple-skill`
-  负责 macOS Apple Calendar / Reminders 闭环，把高价值校园动作写进你的时间系统
+  负责 macOS Apple 增强版，把同一套校园能力接进 Apple Calendar / Apple Reminders
 
 这两个 npm 包只分发 skill payload 和部署器：
 
@@ -94,16 +94,32 @@ curl -fsSL https://raw.githubusercontent.com/qybaihe/SYSU-Anything/main/install/
 
 适合直接在 OpenClaw 生态里安装、分发、更新这两个 skill。
 
-ClawHub 安装：
+推荐按环境选择：
+
+- 非 macOS：安装标准版 `sysu-anything-cli`
+- macOS：安装 Apple 方案，即 `sysu-anything-cli + sysu-anything-apple`
+
+设计原则很明确：
+
+- `sysu-anything-cli` 是标准版
+- `sysu-anything-apple` 是 macOS 增强层
+- 两者底层复用同一套 `sysu-anything` campus runtime
+- 除了 Apple Calendar / Apple Reminders 集成以外，其余校园能力保持一致
+
+ClawHub 安装命令：
+
+非 macOS：
+
+```bash
+clawhub install sysu-anything-cli
+npm i -g sysu-anything
+```
+
+macOS：
 
 ```bash
 clawhub install sysu-anything-cli
 clawhub install sysu-anything-apple
-```
-
-OpenClaw 会根据 skill metadata 提示安装底层编译版 runtime：
-
-```bash
 npm i -g sysu-anything
 ```
 

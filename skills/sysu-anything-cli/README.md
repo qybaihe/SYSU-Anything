@@ -1,6 +1,17 @@
 # sysu-anything-cli-skill
 
-The campus operations layer of `SYSU-Anything.skill`.
+The standard cross-platform edition of `SYSU-Anything.skill`.
+
+Recommended:
+
+- Non-macOS: install this standard edition
+- macOS: keep this as the base layer, then add `sysu-anything-apple`
+
+Capability boundary:
+
+- This is the baseline campus workflow layer
+- The Apple edition keeps the same campus capability coverage
+- The only extra layer in Apple edition is Apple Calendar / Apple Reminders integration
 
 Install for OpenAI Codex / Codex Cloud:
 
