@@ -117,6 +117,19 @@ npx -y sysu-anything-apple-skill@latest deploy --target ai-ide --dest ./SYSU-Any
 curl -fsSL https://raw.githubusercontent.com/qybaihe/SYSU-Anything/main/install/ai-ide.sh | bash
 ```
 
+## 🔒 隐私与安全
+
+这个项目在设计上尽量把隐私风险压低：
+
+- **不保存你的校园账号密码**
+- 登录相关流程优先走 **二维码验证** 或 **官方授权回跳**
+- 更倾向于复用已有登录态，而不是让你把敏感凭据直接交给 Agent
+- 目标是尽量避免把账号密码暴露给脚本、对话上下文或第三方环境
+
+对用户来说，最直观的体验就是：
+
+**你不需要把账号密码交给这个 skill，很多关键流程都尽量通过扫码验证来完成。**
+
 ## ✨ 为什么它值得用？
 
 `SYSU-Anything.skill` 现在已经覆盖并统一了大量高频校园场景：
