@@ -2,6 +2,8 @@
 *
 !.gitignore
 !README.md
+!assets/
+!assets/**
 !install/
 !install/**
 !skills/
