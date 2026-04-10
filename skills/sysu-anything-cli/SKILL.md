@@ -1,6 +1,7 @@
 ---
 name: sysu-anything-cli
 description: Use when the user wants to operate SYSU campus services through the SYSU Anything CLI, including offline Guangzhou shuttle lookup, Qiguan rides between Zhuhai and Guangzhou, Rain Classroom web login/check-in/homework submit flows, JWXT timetable and leave flows, campus chat, gym booking, libic seminar-room reservation, career teachin/jobfair/job workflows, explore seminar/research flows, xgxt work-study and holiday leave/return-school flows, and CAS-based login/session recovery.
+license: MIT
 metadata:
   {
     "openclaw":

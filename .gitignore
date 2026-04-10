@@ -1,6 +1,7 @@
 # Public repo policy: publish only the skill layer, install scripts, and top-level README.
 *
 !.gitignore
+!LICENSE
 !README.md
 !assets/
 !assets/**

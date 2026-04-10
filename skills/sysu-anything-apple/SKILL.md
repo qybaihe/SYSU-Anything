@@ -1,6 +1,7 @@
 ---
 name: sysu-anything-apple
 description: Use when the user wants SYSU Anything on macOS with Apple Calendar or Apple Reminders integration, including Apple permission checks, today/timetable calendar sync, Qiguan trip reminders, Rain Classroom homework deadline reminders, career teachin/jobfair imports, gym booking sync, libic seminar-room reservation sync, explore seminar reservation sync, JWXT leave calendar blocks, and xgxt work-study slot calendar sync.
+license: MIT
 metadata:
   {
     "openclaw":
