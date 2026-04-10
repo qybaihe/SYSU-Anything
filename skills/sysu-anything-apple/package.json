@@ -1,6 +1,6 @@
 {
   "name": "sysu-anything-apple-skill",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "SYSU-Anything.skill Apple pack for macOS Calendar and Reminders campus sync.",
   "type": "module",
   "bin": {
@@ -14,6 +14,7 @@
   "homepage": "https://github.com/qybaihe/SYSU-Anything",
   "files": [
     "bin/",
+    "LICENSE",
     "README.md",
     "SKILL.md",
     "agents/",
