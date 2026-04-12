@@ -1,6 +1,6 @@
 ---
 name: sysu-anything-apple
-description: Use when the user wants SYSU Anything on macOS with Apple Calendar or Apple Reminders integration, including Apple permission checks, today/timetable calendar sync, Qiguan trip reminders, Rain Classroom homework deadline reminders, career teachin/jobfair imports, gym booking sync, libic seminar-room reservation sync, explore seminar reservation sync, JWXT leave calendar blocks, and xgxt work-study slot calendar sync.
+description: Use when the user wants the macOS Apple-enhanced SYSU workflow layer, especially natural-language requests such as 把课表同步到日历、把雨课堂 ddl 加到提醒事项、把宣讲会或招聘会写进日历、把岐关行程加提醒、预约健身房并同步日历、预约图书馆研讨室并提醒我、请假后写入日历、勤工助学时间同步到日历, or any fuzzy request about Apple Calendar or Apple Reminders integration for SYSU campus tasks.
 metadata:
   {
     "openclaw":

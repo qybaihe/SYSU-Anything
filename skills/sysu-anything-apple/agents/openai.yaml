@@ -1,4 +1,4 @@
 interface:
   display_name: "SYSU Anything Apple"
-  short_description: "Sync SYSU flows into Apple apps on macOS"
-  default_prompt: "Use $sysu-anything-apple to run SYSU Anything macOS workflows with Apple Calendar or Apple Reminders, including libic and career sync."
+  short_description: "把课表、作业、预约、宣讲会同步进 Apple 日历和提醒事项"
+  default_prompt: "Use $sysu-anything-apple when the user wants a SYSU campus task on macOS synced into Apple Calendar or Apple Reminders, including fuzzy requests like 把课表写进日历、把 ddl 加提醒、把健身房预约同步一下."

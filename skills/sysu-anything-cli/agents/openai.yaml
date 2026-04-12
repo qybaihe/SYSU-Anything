@@ -1,4 +1,4 @@
 interface:
   display_name: "SYSU anything CLI"
-  short_description: "Operate SYSU services through the published CLI"
-  default_prompt: "Use $sysu-anything-cli to operate SYSU campus services, libic, and Qiguan rides through the published sysu-anything CLI."
+  short_description: "查课表、约健身房、看作业、查班车等中大校园事务"
+  default_prompt: "Use $sysu-anything-cli when the user gives natural-language SYSU campus requests such as 查课表、预约健身房、看雨课堂作业、查班车、查岐关、订图书馆研讨室、看宣讲会、查勤工助学 or other campus-service tasks."
