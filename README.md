@@ -21,16 +21,18 @@
 - `sysu-anything-cli-skill`
   标准版，跨平台可用，适合 Windows / Linux / macOS
 - `sysu-anything-apple-skill`
-  Apple 增强版，仅适合 macOS，用来把同一套校园能力接进 Apple Calendar / Apple Reminders
+  Apple 增强版，仅适合 macOS 12+（Monterey+，支持 Apple Silicon / Intel），用来把同一套校园能力接进 Apple Calendar / Apple Reminders
 
 推荐规则非常简单：
 
-- 非 macOS：装 `sysu-anything-cli`
-- macOS：装 `sysu-anything-cli + sysu-anything-apple`
+- 非 macOS 或 macOS 11 及以下：装 `sysu-anything-cli`
+- macOS 12+：装 `sysu-anything-cli + sysu-anything-apple`
 
 最重要的一点：
 
 **除了 Apple Calendar / Apple Reminders 集成以外，Apple 版和标准版的校园能力基本一致。**
+
+**仓库当前的 Apple 原生桥接构建目标已经下放到 macOS 12+；如果你装到的 npm runtime 还是旧版桥接，请等待下一次运行时发版，或在本地源码仓库自行构建。**
 
 ## 🧩 它到底打通了什么？
 
@@ -65,7 +67,7 @@ clawhub install sysu-anything-cli
 npm i -g sysu-anything
 ```
 
-macOS：
+macOS 12+：
 
 ```bash
 clawhub install sysu-anything-cli
@@ -83,7 +85,7 @@ npm i -g sysu-anything
 npx -y sysu-anything-cli-skill@latest deploy --target codex
 ```
 
-macOS 再额外安装 Apple 增强版：
+macOS 12+ 再额外安装 Apple 增强版：
 
 ```bash
 npx -y sysu-anything-apple-skill@latest deploy --target codex
@@ -105,7 +107,7 @@ curl -fsSL https://raw.githubusercontent.com/qybaihe/SYSU-Anything/main/install/
 npx -y sysu-anything-cli-skill@latest deploy --target ai-ide --dest ./SYSU-Anything.skill
 ```
 
-macOS 再额外安装 Apple 增强版：
+macOS 12+ 再额外安装 Apple 增强版：
 
 ```bash
 npx -y sysu-anything-apple-skill@latest deploy --target ai-ide --dest ./SYSU-Anything.skill
@@ -115,6 +117,24 @@ npx -y sysu-anything-apple-skill@latest deploy --target ai-ide --dest ./SYSU-Any
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/qybaihe/SYSU-Anything/main/install/ai-ide.sh | bash
+```
+
+## 🍎 Apple 兼容性
+
+Apple 增强版依赖预编译 Apple 原生桥接二进制。仓库当前源码构建已经验证支持：
+
+- macOS 12+（Monterey+）
+- Apple Silicon + Intel
+
+说明：
+
+- 较早的已发布预编译版本曾使用 `macOS 13+` 目标，所以会和 macOS 12 不兼容；仓库当前源码构建已经下放到 `macOS 12+`
+- 一键部署脚本会自动判断系统版本：只有 macOS 12+ 才会附带部署 `sysu-anything-apple`
+- 如果你当前安装到的 `sysu-anything` npm runtime 还没包含这版桥接，请等待下一次 runtime 发版，或先在本地源码仓库构建
+- 如果你在本地维护源码，也可以自行构建 Apple 桥接：
+
+```bash
+APPLE_BRIDGE_MACOS_TARGET=12.0 npm run build
 ```
 
 ## 🔒 隐私与安全

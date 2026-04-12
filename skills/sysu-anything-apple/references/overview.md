@@ -1,6 +1,6 @@
 # SYSU anything Apple overview
 
-Use this skill only for macOS workflows that need Apple Calendar or Apple Reminders. Prefer the installed `sysu-anything-apple` binary from the published `sysu-anything` npm package.
+Use this skill only for macOS 12+ (Monterey+) workflows that need Apple Calendar or Apple Reminders. Prefer the installed `sysu-anything-apple` binary from the published `sysu-anything` npm package. On non-macOS or macOS 11 and below, stay on `sysu-anything` and skip the Apple sync layer.
 
 Primary entrypoint:
 
@@ -15,6 +15,8 @@ sysu-anything-apple apple doctor
 ```
 
 If `doctor` fails, do not continue with Apple sync commands.
+
+The repository build of the Apple bridge binaries supports both Apple Silicon and Intel on macOS 12+. If your installed npm runtime still ships the older macOS 13+ bridge, use the local workspace build until the refreshed runtime release lands.
 
 ## Login checks
 

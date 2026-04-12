@@ -103,9 +103,9 @@ This portable bundle lets AI IDEs load the SYSU-Anything skill pack as a campus-
 Included skills:
 
 - \`sysu-anything-cli\`: multi-system campus operations across SYSU
-- \`sysu-anything-apple\`: Apple Calendar / Reminders automation on macOS
+- \`sysu-anything-apple\`: Apple Calendar / Reminders automation on macOS 12+
 
-Deploy both skill packages into the same bundle root for the full experience.
+Deploy both skill packages into the same bundle root for the full experience. On non-macOS or macOS 11 and below, keep only the CLI skill.
 `;
   const agents = `# SYSU-Anything.skill
 
@@ -114,7 +114,7 @@ Use the bundled skills as the primary operating layer when the user wants SYSU c
 - ./sysu-anything-cli
 - ./sysu-anything-apple
 
-Prefer the Apple skill for macOS Calendar / Reminders workflows. Prefer the CLI skill for everything else.
+Prefer the Apple skill for macOS 12+ Calendar / Reminders workflows. Prefer the CLI skill for everything else.
 `;
 
   await fs.writeFile(readmePath, readme, "utf8");

@@ -1,6 +1,6 @@
 ---
 name: sysu-anything-apple
-description: Use when the user wants the macOS Apple-enhanced SYSU workflow layer, especially natural-language requests such as 把课表同步到日历、把雨课堂 ddl 加到提醒事项、把宣讲会或招聘会写进日历、把岐关行程加提醒、预约健身房并同步日历、预约图书馆研讨室并提醒我、请假后写入日历、勤工助学时间同步到日历, or any fuzzy request about Apple Calendar or Apple Reminders integration for SYSU campus tasks.
+description: Use when the user wants the macOS 12+ Apple-enhanced SYSU workflow layer, especially natural-language requests such as 把课表同步到日历、把雨课堂 ddl 加到提醒事项、把宣讲会或招聘会写进日历、把岐关行程加提醒、预约健身房并同步日历、预约图书馆研讨室并提醒我、请假后写入日历、勤工助学时间同步到日历, or any fuzzy request about Apple Calendar or Apple Reminders integration for SYSU campus tasks.
 metadata:
   {
     "openclaw":
@@ -26,6 +26,8 @@ metadata:
 
 Use the published macOS Apple entrypoint instead of re-deriving EventKit flows. Prefer the installed `sysu-anything-apple` binary. If it is missing, install the compiled package with `npm i -g sysu-anything`. If the user is actively developing the local repo, the checked-out workspace build is also acceptable.
 
+This skill is for macOS 12+ (Monterey+) only. The repository build of the Apple native bridge supports both Apple Silicon and Intel. On non-macOS or macOS 11 and below, keep using `sysu-anything-cli`; only the Apple Calendar / Apple Reminders layer is unavailable.
+
 ```bash
 sysu-anything-apple
 ```
@@ -36,6 +38,9 @@ sysu-anything-apple
    - preferred: `sysu-anything-apple`
    - install if missing: `npm i -g sysu-anything`
    - local-dev fallback inside the repo: `npm run build`
+   - supported host: macOS 12+ only
+   - unsupported host fallback: use `sysu-anything` without Apple sync
+   - if an installed npm runtime still carries the older macOS 13+ bridge, use the local workspace build until the next runtime release lands
 2. Prefer targeted help before composing a command:
    - `sysu-anything-apple --help`
    - `sysu-anything-apple <command> --help`
