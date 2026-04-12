@@ -32,7 +32,7 @@
 
 **除了 Apple Calendar / Apple Reminders 集成以外，Apple 版和标准版的校园能力基本一致。**
 
-**仓库当前的 Apple 原生桥接构建目标已经下放到 macOS 12+；如果你装到的 npm runtime 还是旧版桥接，请等待下一次运行时发版，或在本地源码仓库自行构建。**
+**当前 npm 发布的 Apple 原生桥接二进制已经支持 macOS 12+；如果你之前在 macOS 12 上装过旧版本，重新升级到最新即可。**
 
 ## 🧩 它到底打通了什么？
 
@@ -121,16 +121,16 @@ curl -fsSL https://raw.githubusercontent.com/qybaihe/SYSU-Anything/main/install/
 
 ## 🍎 Apple 兼容性
 
-Apple 增强版依赖预编译 Apple 原生桥接二进制。仓库当前源码构建已经验证支持：
+Apple 增强版依赖预编译 Apple 原生桥接二进制，目前已发布支持：
 
 - macOS 12+（Monterey+）
 - Apple Silicon + Intel
 
 说明：
 
-- 较早的已发布预编译版本曾使用 `macOS 13+` 目标，所以会和 macOS 12 不兼容；仓库当前源码构建已经下放到 `macOS 12+`
+- 较早的已发布预编译版本曾使用 `macOS 13+` 目标，所以会和 macOS 12 不兼容；当前最新发布已经下放到 `macOS 12+`
 - 一键部署脚本会自动判断系统版本：只有 macOS 12+ 才会附带部署 `sysu-anything-apple`
-- 如果你当前安装到的 `sysu-anything` npm runtime 还没包含这版桥接，请等待下一次 runtime 发版，或先在本地源码仓库构建
+- 如果你之前已经安装过旧版 `sysu-anything`，直接升级到最新即可拿到新的 Apple bridge
 - 如果你在本地维护源码，也可以自行构建 Apple 桥接：
 
 ```bash

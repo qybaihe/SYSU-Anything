@@ -12,7 +12,7 @@ Equivalent installed binary:
 sysu-anything-apple ...
 ```
 
-If the host is non-macOS or macOS 11 and below, stay on `sysu-anything` and skip the Apple sync layer. If the installed npm runtime still ships the older macOS 13+ bridge, use a fresh local build of the repo until the updated runtime release is published.
+If the host is non-macOS or macOS 11 and below, stay on `sysu-anything` and skip the Apple sync layer. If the user previously installed an older npm runtime with the macOS 13+ bridge, have them upgrade `sysu-anything` before retrying Apple sync.
 
 ## First step on a new Mac
 

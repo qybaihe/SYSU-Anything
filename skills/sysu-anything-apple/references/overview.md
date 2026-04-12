@@ -16,7 +16,7 @@ sysu-anything-apple apple doctor
 
 If `doctor` fails, do not continue with Apple sync commands.
 
-The repository build of the Apple bridge binaries supports both Apple Silicon and Intel on macOS 12+. If your installed npm runtime still ships the older macOS 13+ bridge, use the local workspace build until the refreshed runtime release lands.
+The published Apple bridge binaries support both Apple Silicon and Intel on macOS 12+. If the user previously installed an older npm runtime with the macOS 13+ bridge, have them upgrade `sysu-anything` first.
 
 ## Login checks
 

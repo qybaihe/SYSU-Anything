@@ -26,7 +26,7 @@ metadata:
 
 Use the published macOS Apple entrypoint instead of re-deriving EventKit flows. Prefer the installed `sysu-anything-apple` binary. If it is missing, install the compiled package with `npm i -g sysu-anything`. If the user is actively developing the local repo, the checked-out workspace build is also acceptable.
 
-This skill is for macOS 12+ (Monterey+) only. The repository build of the Apple native bridge supports both Apple Silicon and Intel. On non-macOS or macOS 11 and below, keep using `sysu-anything-cli`; only the Apple Calendar / Apple Reminders layer is unavailable.
+This skill is for macOS 12+ (Monterey+) only. The published Apple native bridge supports both Apple Silicon and Intel. On non-macOS or macOS 11 and below, keep using `sysu-anything-cli`; only the Apple Calendar / Apple Reminders layer is unavailable.
 
 ```bash
 sysu-anything-apple
@@ -40,7 +40,7 @@ sysu-anything-apple
    - local-dev fallback inside the repo: `npm run build`
    - supported host: macOS 12+ only
    - unsupported host fallback: use `sysu-anything` without Apple sync
-   - if an installed npm runtime still carries the older macOS 13+ bridge, use the local workspace build until the next runtime release lands
+   - if the user previously installed an older npm runtime, ask them to upgrade `sysu-anything` before retrying Apple sync
 2. Prefer targeted help before composing a command:
    - `sysu-anything-apple --help`
    - `sysu-anything-apple <command> --help`

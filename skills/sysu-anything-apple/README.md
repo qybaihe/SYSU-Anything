@@ -15,8 +15,8 @@ Capability boundary:
 
 Compatibility:
 
-- The repository build of the Apple native bridge now targets macOS 12+ on both Apple Silicon and Intel
-- If your installed `sysu-anything` runtime still ships the older macOS 13+ bridge, wait for the next runtime release or build the local workspace yourself
+- The published Apple native bridge now targets macOS 12+ on both Apple Silicon and Intel
+- If you previously installed an older `sysu-anything` runtime with the macOS 13+ bridge, upgrade to the latest release
 - The one-click install scripts in the repo now auto-skip the Apple pack on unsupported systems
 
 Install for OpenAI Codex / Codex Cloud:
