@@ -56,6 +56,10 @@ sysu-anything <command> <subcommand> --help
   - 体育场馆认证、查询、预约
 - `libic`
   - 图书馆空间 / 研讨室登录、空档查询与预约
+- `usc`
+  - USC / BPM 课室、会议场所、学生活动预约
+  - `classroom campuses/sections/rooms`、`meeting campuses/venues/availability`、`activity rooms/clubs`
+  - `classroom fill-initial` 初始申请阶段不选择具体课室；后续 `fill-room` 才处理教务部登记后的课室选择
 - `explore`
   - 交叉探索平台组会、课题查询与提交
 - `career`
@@ -83,6 +87,9 @@ sysu-anything jwxt timetable --help
 sysu-anything chat send --help
 sysu-anything gym book --help
 sysu-anything libic reserve --help
+sysu-anything usc classroom fill-initial --help
+sysu-anything usc meeting venues --help
+sysu-anything usc activity rooms --help
 sysu-anything career teachin list --help
 sysu-anything career jobfair detail --help
 sysu-anything career job apply --help
@@ -103,6 +110,7 @@ sysu-anything-apple career jobfair detail --id 49326 --calendar --reminders
 - 需要校园智能问答或知识库范围：用 `chat`
 - 需要体育场馆时段或预约：用 `gym`
 - 需要图书馆空间 / 研讨室空档或预约：用 `libic`
+- 需要课室、会议场所、学生活动预约：用 `usc`，先读 `references/usc.md`
 - 需要就业系统宣讲会、招聘会、岗位或简历投递：用 `career`
 - 需要组会预约或课题报名：用 `explore`
 - 需要勤工助学岗位、简历、报名，或长假离返校登记：用 `xgxt`
@@ -125,6 +133,8 @@ sysu-anything-apple career jobfair detail --id 49326 --calendar --reminders
   - 先跑 `sysu-anything gym profile`
 - `libic`
   - 先跑 `sysu-anything libic whoami`
+- `usc`
+  - 先跑 `sysu-anything usc whoami --json`
 - `explore`
   - 先跑 `sysu-anything explore whoami`
 - `career`
@@ -142,5 +152,6 @@ sysu-anything-apple career jobfair detail --id 49326 --calendar --reminders
 - 如果命令已经覆盖能力，不要再回退到手写 HTTP
 - 就业系统相关请求优先读 `references/career.md`，里面区分了公开页、写操作、Apple 导入和当前已知阻塞项
 - 写操作前先读 `references/safety-and-confirm.md`
+- USC 课室初始申请不要强行选择具体课室；`Select_151` 为空通常是正常状态
 - 登录相关动作前先读 `references/auth-and-state.md`
 - `xgxt current-user` 现在会在 token 过期但 CAS 仍可用时自动刷新

@@ -1,4 +1,4 @@
 interface:
   display_name: "SYSU Anything Apple"
   short_description: "在 macOS 12+ 上把课表、作业、预约、宣讲会同步进 Apple 日历和提醒事项"
-  default_prompt: "Use $sysu-anything-apple when the user wants a SYSU campus task on macOS 12+ synced into Apple Calendar or Apple Reminders, including fuzzy requests like 把课表写进日历、把 ddl 加提醒、把健身房预约同步一下."
+  default_prompt: "Use $sysu-anything-apple when the user wants a SYSU campus task on macOS 12+ synced into Apple Calendar or Apple Reminders, including fuzzy requests like 把课表写进日历、把 ddl 加提醒、把健身房预约同步一下、课室预约提交后帮我建提醒事项."

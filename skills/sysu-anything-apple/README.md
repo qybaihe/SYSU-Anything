@@ -12,6 +12,7 @@ Capability boundary:
 - This edition is the macOS enhancement on top of the standard campus layer
 - It shares the same campus workflow coverage as the standard edition
 - The only added capability is Apple Calendar / Apple Reminders integration
+- USC classroom submit can write the confirmed reservation into Apple Calendar and Reminders
 
 Compatibility:
 

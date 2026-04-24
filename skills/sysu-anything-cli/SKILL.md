@@ -1,6 +1,6 @@
 ---
 name: sysu-anything-cli
-description: Use when the user wants SYSU campus help through the SYSU Anything CLI, including natural-language requests such as 查课表、今天有什么课、教务系统、请假、雨课堂作业、ddl、签到、预约健身房、预约体育馆、订球场、查班车、查岐关、图书馆研讨室、宣讲会、招聘会、岗位投递、勤工助学、学工系统、交叉探索、校园问答、校内资讯, or fuzzy requests to handle campus services, bookings, schedules, reminders, and CAS-based login recovery.
+description: Use when the user wants SYSU campus help through the SYSU Anything CLI, including natural-language requests such as 查课表、今天有什么课、教务系统、请假、雨课堂作业、ddl、签到、预约健身房、预约体育馆、订球场、查班车、查岐关、图书馆研讨室、宣讲会、招聘会、岗位投递、勤工助学、学工系统、USC课室预约、会议场所预约、学生活动预约、交叉探索、校园问答、校内资讯, or fuzzy requests to handle campus services, bookings, schedules, reminders, and CAS-based login recovery.
 metadata:
   {
     "openclaw":
@@ -47,6 +47,7 @@ If the user explicitly wants Apple Calendar / Apple Reminders integration on mac
    - `gym`: `sysu-anything gym profile`
    - `libic`: `sysu-anything libic whoami`
    - `explore`: `sysu-anything explore whoami`
+   - `usc`: `sysu-anything usc whoami --json`
    - `career` list/detail: no login check needed
    - `career` teachin/jobfair signup or `career job apply`: no dedicated status endpoint; if the career write path may be stale, run `sysu-anything auth workwechat` first so the command can seed `career-session.json`
    - `xgxt`: `sysu-anything xgxt current-user`
@@ -70,6 +71,7 @@ If the user explicitly wants Apple Calendar / Apple Reminders integration on mac
 - For campus chat login, scopes, or messaging, read `references/chat.md`.
 - For gym availability or booking, read `references/gym.md`.
 - For libic seminar-room refresh / availability / reservation flows, read `references/libic.md`.
+- For USC / BPM classroom, meeting-room, and student-activity reservation flows, read `references/usc.md`.
 - For explore seminar or research flows, read `references/explore.md`.
 - For xgxt work-study or holiday leave/return-school flows, read `references/xgxt.md`.
 

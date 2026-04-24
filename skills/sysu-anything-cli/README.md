@@ -12,6 +12,7 @@ Capability boundary:
 - This is the baseline campus workflow layer
 - The Apple edition keeps the same campus capability coverage
 - The only extra layer in Apple edition is Apple Calendar / Apple Reminders integration
+- USC / BPM classroom, meeting-room, and student-activity reservations are part of the standard layer
 
 Install for OpenAI Codex / Codex Cloud:
 

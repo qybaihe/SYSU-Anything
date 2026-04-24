@@ -42,6 +42,8 @@ The published Apple bridge binaries support both Apple Silicon and Intel on macO
   - `sysu-anything gym profile`
 - `libic reserve --confirm --calendar --reminders`
   - `sysu-anything libic whoami`
+- `usc classroom submit --confirm --calendar --reminders`
+  - `sysu-anything usc whoami --json`
 - `explore seminar reserve --confirm --calendar --reminders`
   - `sysu-anything explore whoami`
 - `jwxt leave apply --confirm --calendar-block --reminders`
@@ -156,6 +158,26 @@ Notes:
 - preview mode still skips Apple sync
 - Apple sync only runs after libic confirms the reservation
 - repeated syncs update the same event/reminders instead of duplicating them
+
+### USC classroom reservation
+
+```bash
+sysu-anything-apple usc classroom submit --sess-id <id> --confirm --calendar --reminders
+sysu-anything-apple usc classroom sync --sess-id <id> --calendar --reminders
+```
+
+This creates after BPM confirms `/site/app/start`:
+
+- one Calendar event for the requested classroom-use time
+- one “课室预约已提交” reminder before the activity
+- one “课室使用开始” reminder at the requested start time
+
+Notes:
+
+- without `--confirm`, USC classroom submit remains preview-only and Apple sync is skipped
+- `sync` backfills Apple Calendar / Reminders for an already-existing BPM session and does not call `/site/app/start`
+- the Apple layer reads `examine-data` and `session-detail` after submit, so the event/reminder notes include the activity content, campus, time, people count, applicant info, and requirements
+- app_id=197 initial application usually has no concrete classroom yet; notes must mark the room as pending later allocation instead of pretending a room was selected
 
 ### Explore seminar
 

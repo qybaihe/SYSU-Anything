@@ -8,6 +8,9 @@
 - `sysu-anything gym book`
 - `sysu-anything explore seminar reserve`
 - `sysu-anything explore research apply`
+- `sysu-anything usc classroom submit`
+- `sysu-anything usc meeting submit`
+- `sysu-anything usc activity submit`
 
 ## 默认策略
 
@@ -28,3 +31,4 @@
 - 能用 `--json` 时优先用 `--json`
 - 不要猜测 callback URL、ID、场地名、组会 ID、课题 ID
 - 如果登录态异常，先走恢复命令，不要直接切浏览器自动化
+- USC / BPM 的草稿保存、`examine-data`、`session-detail`、datasource 查询都可以做；真正最终提交 `/site/app/start` 必须等用户明确确认后才加 `--confirm`
